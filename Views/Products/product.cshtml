@@ -1,0 +1,50 @@
+﻿@model IEnumerable<DeltaCore.Models.ProductsService>
+@{
+    ViewBag.Title = "product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    table {
+        font-family: Arial;
+        margin: 0 auto;
+    }
+
+    table , th,tr,td {
+        padding: 10px;
+        border: 1px solid black;
+    }
+
+    h2{
+        text-align:center;
+        margin-bottom: 20px;
+    }
+</style>
+
+<h2>DeltaWare Products</h2>
+
+<table>
+    <tr>
+        <th>
+            Product Id
+        </th>
+
+        <th>
+            Name
+        </th>
+        <th>
+            Description
+        </th>
+    </tr>
+
+    @foreach (var product in Model)
+
+    {
+        <tr>
+            <td>@product.Id</td>
+            <td>@product.Name</td>
+            <td>@product.Description</td>
+        </tr>
+    }
+
+</table>
